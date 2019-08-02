@@ -1,24 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import disc from './assets/disc.jpg';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main className="playerBlock">
+        <div className="top">
+          <div className="disc">
+            <img alt="disc image" src={disc} />
+            <div className="discCover"></div>
+          </div>
+          <div className="actBTnBlock"></div>
+        </div>
+        <div className="bottom"></div>
+      </main>
     </div>
   );
 }

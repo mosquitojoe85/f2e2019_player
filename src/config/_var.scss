@@ -1,0 +1,12 @@
+$white: #fff;
+$orange: #FF8C6E;
+$black: #000;
+$gray: #C5C5C5;
+
+$black16: fade-out($black, 0.8);
+$white16: fade-out($white, 0.4);
+
+
+@mixin border {
+  border: 3px solid $black;
+}
