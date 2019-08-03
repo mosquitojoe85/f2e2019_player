@@ -10,3 +10,10 @@ $white16: fade-out($white, 0.4);
 @mixin border {
   border: 3px solid $black;
 }
+
+div, button { box-sizing: border-box; }
+button {
+  border: none;
+}
+
+*:focus { outline: none; }

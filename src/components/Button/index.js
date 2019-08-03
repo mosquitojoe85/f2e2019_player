@@ -4,7 +4,10 @@ import './index.scss';
 
 function Button({ icon, act }) {
   return (
-    <button className="btn"></button>
+    <div className="btnWrapper btn">
+      <div className="btnShadow"></div>
+      <button onClick={act}><img src={icon} alt="btn icon" /></button>
+    </div>
   );
 }
 
