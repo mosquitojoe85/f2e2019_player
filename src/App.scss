@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: $orange;
-  padding: 30px;
+  padding: 50px;
   .playerBlock {
     width: 732px;
     height: 732px;
@@ -45,72 +45,6 @@
       padding-top: 30px;
       padding-left: 70px;
       display: flex;
-      .discBlock {
-        width: 533px;
-        height: 533px;
-        position: relative;
-        flex: none;
-        .discLine1 {
-          position: absolute;
-          background-image: url("./assets/line.svg");
-          background-repeat: no-repeat;
-          background-position: center;
-          top: 138px;
-          left: -20px;
-          height: 80px;
-          width: 20px;
-        }
-        .discLine2 {
-          position: absolute;
-          background-image: url("./assets/line2.svg");
-          background-repeat: no-repeat;
-          background-position: center;
-          top: 235px;
-          right: -40px;
-          height: 65px;
-          width: 20px;
-        }
-        .discLine3 {
-          position: absolute;
-          background-image: url("./assets/line3.svg");
-          background-repeat: no-repeat;
-          background-position: center;
-          top: 235px;
-          right: -30px;
-          height: 80px;
-          width: 20px;
-        }
-        .disc {
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          border-radius: 500px;
-          box-shadow: 0px 3px 6px $black16;
-          img {
-            width: 100%;
-          }
-          .discCover {
-            height: 100%;
-            width: 100%;
-            border-radius: 500px;
-            top: 0;
-            background-color: $white16;
-            position: absolute;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            @include border;
-            &::after {
-              content: "";
-              width: 100px;
-              height: 100px;
-              border-radius: 100px;
-              background-color: $white;
-              @include border;
-            }
-          }
-        }
-      }
       .actBTnBlock {
         width: 65px;
         margin-left: 15px;
@@ -121,8 +55,6 @@
         .btn ~ .btn {
           margin-top: 20px;
         }
-
-
       }
     }
     .bottom {
@@ -131,6 +63,7 @@
         display: flex;
         justify-content: space-between;
         .left {
+          width: 260px;
           h1 {
             margin: 0;
             font-size: 24px;
@@ -142,37 +75,6 @@
           }
         }
         .center {
-          .playBtnBlock {
-            position: relative;
-            .pin {
-              position: absolute;
-              top: -345px;
-              left: -225px;
-              z-index: 2;
-            }
-            .playBtn {
-              position: absolute;
-              width: 50px;
-              top: -6px;
-              left: -8px;
-              z-index: 3;
-              img {
-                width: 100%;
-              }
-            }
-            .playBtnShadow {
-              position: absolute;
-              width: 90px;
-              height: 90px;
-              background-color: #ccc;
-              top: -24px;
-              left: -24px;
-              z-index: 1;
-              border-radius: 90px;
-              @include border;
-
-            }
-          }
         }
         .right {
           width: 170px;

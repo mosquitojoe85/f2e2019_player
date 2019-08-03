@@ -1,32 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MultiSlider, { Progress, Dot } from 'react-multi-bar-slider';
-import disc from './assets/disc.jpg';
 import './App.scss';
 import Button from './components/Button';
+import PlayBtn from './components/PlayBtn';
+import Disc from './components/Disc';
 import next from './assets/next.svg';
 import group from './assets/group.svg';
 import sound from './assets/sound.svg';
-import pin from './assets/player.svg';
-import play from './assets/play2.svg';
+import music from './assets/This_is_a_Jazz_Space.mp3';
 
 const sliderStyle = { border: '3px solid black', borderRadius: 9 };
 const progressStyle = { borderRadius: 9, height: 8 };
 const dotStyle = { border: '3px solid black', borderRadius: 0, height: 18, width: 8 };
 
 function App() {
+  // const [currentTrack, setCurrentTrack] = useState(null);
+  const [status, setStatus] = useState('stop');
+  let audioPlayer = React.createRef();
+
+  const handlePlay = () => {
+    audioPlayer.current.src = music;
+    audioPlayer.current.play();
+    setStatus('play');
+  }
+
+  const handleStop = () => {
+    audioPlayer.current.pause();
+    setStatus('stop');
+  }
+
   return (
     <div className="App">
       <main className="playerBlock">
         <div className="top">
-          <div className="discBlock">
-            <div className="disc">
-              <img alt="disc image" src={disc} />
-              <div className="discCover"></div>
-            </div>
-            <div className="discLine1" />
-            <div className="discLine2" />
-            <div className="discLine3" />
-          </div>
+          <Disc play={status === 'play'} />
           <div className="actBTnBlock">
             <div>
               <Button icon={next} act={() => {console.log("m")}} />
@@ -40,17 +47,11 @@ function App() {
         <div className="bottom">
           <div className="line1">
             <div className="left">
-              <h1>黑色幽默</h1>
-              <h2>周杰倫</h2>
+              <h1>This is a Jazz Space</h1>
+              <h2>Midnight North</h2>
             </div>
             <div className="center">
-              <div className="playBtnBlock">
-                <div className="pin"><img src={pin} alt="pin" /></div>
-                <button className="playBtn"><img src={play} alt="play icon" /></button>
-                <div className="playBtnShadow" />
-              </div>
-
-
+              <PlayBtn play={status === 'play'} playAct={handlePlay} stopAct={handleStop} />
             </div>
             <div className="right">
               <MultiSlider
@@ -77,6 +78,7 @@ function App() {
             <div className="timeLabel">00:00</div>
           </div>
         </div>
+        <audio ref={audioPlayer} />
       </main>
     </div>
   );

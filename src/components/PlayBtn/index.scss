@@ -1,0 +1,38 @@
+@import '../../config/_var.scss';
+
+.playBtnBlock {
+  position: relative;
+  left: -80px;
+  .pin {
+    position: absolute;
+    top: -345px;
+    left: -225px;
+    z-index: 2;
+    &.stopPin {
+      transform: rotate(-17deg);
+      transform-origin: 240px 360px;
+    }
+  }
+  .playBtn {
+    position: absolute;
+    width: 50px;
+    top: -6px;
+    left: -10px;
+    z-index: 3;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+  }
+  .playBtnShadow {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background-color: #ccc;
+    top: -24px;
+    left: -24px;
+    z-index: 1;
+    border-radius: 90px;
+    @include border;
+  }
+}
