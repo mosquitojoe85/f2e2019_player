@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import MultiSlider, { Progress, Dot } from 'react-multi-bar-slider';
 import './App.scss';
 import Button from './components/Button';
@@ -25,7 +25,7 @@ class App extends React.Component {
       trackTime: [0, 0],
       status: 'stop',
     };
-    this.audioPlayer = new Audio;
+    this.audioPlayer = new Audio();
   }
 
   componentDidMount() {
