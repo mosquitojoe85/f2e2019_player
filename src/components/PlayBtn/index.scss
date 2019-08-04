@@ -8,6 +8,7 @@
     top: -345px;
     left: -225px;
     z-index: 2;
+    pointer-events: none;
     &.stopPin {
       transform: rotate(-17deg);
       transform-origin: 240px 360px;

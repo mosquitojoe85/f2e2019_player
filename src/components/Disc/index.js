@@ -11,9 +11,9 @@ function Disc({ play }) {
       </div>
       {play ?
         [
-          <div className="discLine1" />,
-          <div className="discLine2" />,
-          <div className="discLine3" />,
+          <div key="line1" className="discLine1" />,
+          <div key="line2" className="discLine2" />,
+          <div key="line3" className="discLine3" />,
         ] : null
       }
     </div>
